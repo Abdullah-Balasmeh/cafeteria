@@ -1,0 +1,89 @@
+<form [formGroup]="cafeteriaForm" (ngSubmit)="onSubmit()" ngNativeValidate>
+    <div class="Box-grid">
+        <div class="input-box" id="cafName">
+            <h6 class="text-type">اسم الكفتيريا:</h6>
+            <input
+                formControlName="cafName"
+                class="inputText"
+                type="text">
+        </div>
+        <div class="input-box" id="cafNum" >
+            <h6 class="text-type">رقم الكفتيريا:</h6>
+            <input
+                formControlName="cafId"
+                class="inputText"
+                type="text"
+                maxlength="12"
+                minlength="1"
+                readonly>
+        </div>
+        <div class="input-box" id="empName">
+            <h6 class="text-type">اسم الموظف:</h6>
+            <input
+                formControlName="empName"
+                class="inputText"
+                type="text"
+                oninput="this.value = this.value.replace(/[^A-Za-z\u0621-\u064A\u0660-\u0669\s]/g, '')">
+        </div>
+        <div class="input-box" id="epmNum" >
+            <h6 class="text-type">رقم الموظف:</h6>
+            <input
+                formControlName="empId"
+                class="inputText"
+                type="text"
+                maxlength="12"
+                minlength="1"
+                readonly>
+        </div>
+        <div class="input-box" id="empPassword">
+            <h6 class="text-type">كلمة المرور:</h6>
+            <span (click)="togglePasswordVisibility()">
+            </span>
+            <input
+                formControlName="password"
+                class="inputText"
+                [type]="changeType ? 'password' : 'text'"
+                minlength="4"
+                maxlength="26"
+                (input)="validateFieldPassword($event)"
+                (invalid)="validateFieldPassword($event)">
+        </div>
+        <div class="input-box" id="empConfPassword">
+            <h6 class="text-type">تأكيد كلمة المرور:</h6>
+            <div class="input-container">
+                <input
+                    formControlName="ConfirmPassword"
+                    class="inputText"
+                    [type]="changeType ? 'password' : 'text'"
+                    minlength="4"
+                    maxlength="26">
+                <i
+                    [ngClass]="visible ? 'bi bi-eye-slash-fill' : 'bi bi-eye-fill'"
+                    class="toggle-password-icon"
+                    (click)="togglePasswordVisibility()">
+                </i>
+            </div>
+        </div>
+
+        <div id="cafLocation">
+            <h6 class="text-type">الموقع:</h6>
+            <input
+            formControlName="cafLocation"
+            class="inputText"
+            type="text"
+            oninput="this.value = this.value.replace(/[^A-Za-z\u0621-\u064A\u0660-\u0669\s\,]/g, '')">
+        </div>
+        <div class="footer-btn">
+            <p class="In-valid" *ngIf="errorMessage()">{{errorMessage()}}</p>
+            <p class="valid" *ngIf="successMessage()">تم إنشاء الكفتيريا بنجاح</p>
+            <ng-container *ngIf="isLoading(); else notLoading">
+                <div
+                    class="btn primaryColor"><app-loading-image></app-loading-image></div>
+            </ng-container>
+            <ng-template #notLoading>
+                <button type="submit" class="btn primaryColor">إنشاء الكفتيريا</button>
+            </ng-template>
+        </div>
+
+    </div>
+</form>

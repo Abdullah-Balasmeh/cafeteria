@@ -1,0 +1,15 @@
+<div class="container">
+    <app-system-tab 
+        (tabChange)="onTabChange($event)"
+        (closeTab)="onClose()">
+    </app-system-tab>
+
+    <div>
+        @if(selectedTab === 'cafeteria-create'){
+            <app-create-cafeteria></app-create-cafeteria>
+        }@else
+        {
+            <app-cafeteria-table></app-cafeteria-table>
+        }
+    </div>
+</div>

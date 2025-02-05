@@ -1,0 +1,15 @@
+@if(!isChildRoute())
+{
+    <div class="card-box whiteColor shadowColor" id="cardForm">
+        <h1>إدارة النظام</h1>
+        <div class="card" id="card-1" (click)="navigateToEmployeeSection()">
+            <h3>إدارة شؤون الموظفين</h3>
+        </div>
+        <div class="card" id="card-2">
+            <h3>إدارة الأصناف</h3>
+        </div>
+    </div>
+}
+
+<!-- Ensure RouterOutlet is here to load child components -->
+<router-outlet></router-outlet>

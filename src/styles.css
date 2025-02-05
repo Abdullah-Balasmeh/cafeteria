@@ -1,1 +1,457 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Cairo", sans-serif;
+    user-select: none;
+}
+body {
+    min-height: 100vh;
+    background-color: #6FC4C7;
+    user-select: none;
+    overflow-x: hidden;
+    direction: rtl; 
+}
+main{
+    margin-top: 5%;
+    display: flex;
+    height: 50vh;
+    align-items: center;
+    justify-content: center;
+}
+/* Colors */
+.primaryColor {
+    background-color: #3F9295;
+}
+
+.secondaryColor {
+    background-color: #FABB3F;
+}
+.thirdColor {
+    background-color: #6FC4C7;
+}
+
+.whiteColor {
+    background-color: #FFFFFF;
+}
+
+.shadowColor {
+    box-shadow: 10px 10px 5px #32776D;
+}
+.closeColor {
+    background-color: gray;
+    transition: opacity 0.3s ease;
+}
+
+.closeColor:hover {
+    opacity: 0.8;
+}
+/* message Color */
+.In-valid{
+    color: red;
+    font-weight: bold;
+}
+.valid{
+    color: rgb(102, 161, 12);
+    font-weight: bold;
+}
+/* text Style */
+.no-data{
+    font-size: 20px;
+    font-weight: 500;
+    align-self: center;
+    justify-self: center;
+    
+}
+.textWhiteColor {
+    color: #fafafa;
+}
+.text-type {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 5px 5px;
+}
+/* login style */
+.parent-card-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 420px;
+    height: 100vh; 
+    margin: auto; 
+    text-align: center;
+}
+.login-card {
+    min-width: 360px;
+    width: 100%;
+    border-radius: 15px;
+    padding: 30px 40px;
+}
+
+.login-card .HCS-logo {
+    width: 25%;
+    margin:0; 
+}
+
+.login-card h1 {
+    color: black;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-card .input-box {
+    position: relative;
+    margin: 20px 0 40px;
+    width: 100%;
+}
+
+
+.login-card .input-box input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 3px black solid;
+    display: block;
+    width: 100%;
+    padding: 15px 40px 15px 0; 
+    font-size: 18px;
+    color: black;
+    position: relative;
+    z-index: 100;
+    text-align: right;
+}
+
+.login-card .input-box input:focus,
+.login-card .input-box input:valid {
+    outline: 0;
+    border-bottom-color: #3F9295;
+}
+
+
+.login-card .input-box i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    z-index: 101;
+    color: black;
+    cursor: pointer;
+}
+#togglePassword {
+    position: absolute;
+    right: 93%; 
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    z-index: 101;
+    color: black;
+    cursor: pointer;
+}
+
+
+.login-card .input-box input::placeholder {
+    color: black;
+    text-align: right;
+    padding-right: 3px;
+}
+@media (max-width: 768px) {
+    .login-card {
+        width: 90%;
+        padding: 20px 30px;
+    }
+
+    .login-card h1 {
+        font-size: 24px;
+    }
+
+    .input-box input {
+        font-size: 16px;
+        padding: 12px 35px 12px 0;
+    }
+
+    .login-card .HCS-logo {
+        width: 120px;
+    }
+
+    .login-card .btn {
+        padding: 12px;
+        font-size: 18px;
+    }
+}
+/* container that contain tabs */
+.container {
+    min-width: fit-content;
+    width: max-content;
+    height: max-content;
+    max-height: 750px;
+    max-width: 1400px;
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px #32776D;
+    direction: rtl;
+    margin: 30px 30px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+/* Style nav box */
+.nav-box {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+}
+.nav-box h1 {
+    justify-self: center;
+    align-self: center;
+    margin-bottom: 10px;
+}
+
+/* Navigation tab styling */
+.nav-box nav {
+    position: relative;
+    display: inline-flex;
+    flex-direction: row;
+    height: 50px;
+    width: max-content;
+    justify-self: center;
+    align-self: center;
+    z-index: 1;
+}
+
+/* Underline in navigation */
+.nav-box nav::after {
+    content: "";
+    background: rgba(192, 192, 192, 0.393);
+    width: 100%;
+    height: 0.1px;
+    position: absolute;
+    top: 47px;
+    filter: blur(0.5px);
+}
+
+/* Tab label styling */
+.nav-box nav label {
+    position: relative;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-left: 15px;
+    white-space: nowrap;
+}
+
+.nav-box nav .slider {
+    position: absolute;
+    height: 5px;
+    border-radius: 20px;
+    right: 0;
+    bottom: 0;
+    transition: all 0.3s ease;
+}
+/* Form style */
+form {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* main btn */
+.btn {
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    padding: 15px;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fafafa;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.btn:focus {
+    outline: 0;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+.loading{
+    margin: 20px;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+}
+#close-btn{
+    display: flex;
+    flex-direction: row;
+    align-self: end;
+    margin: 10px 0 10px 10px;
+    background-color: #3F9295;
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-weight: bolder;
+    width: max-content;
+}
+
+#close-btn:focus {
+    outline: 0;
+}
+
+#close-btn:active {
+    transform: scale(0.98);
+}
+
+#close-btn:hover {
+    background-color: #e70f0f;
+    cursor: pointer;
+}
+/* card style */
+.card-box{
+    border-radius: 10px;
+    direction: rtl;
+    display: grid; 
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    width: 200px;
+    height: 200px;
+    background-color:#3F9295 ;
+    color: #F0F0F0;
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    user-select: none;
+}
+.card:hover{
+    cursor: pointer;
+}
+.card:focus {
+    outline: 0;
+}
+
+.card:active {
+    transform: scale(0.98);
+}
+/* radio-inputs style */
+/* Hide the radio buttons */
+input[type='checkBox'] , input[type='radio']{
+    display: none;
+}
+/* Radio button label styling */
+.radio-inputs .radio .name {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    background-color: rgba(194, 192, 192, 0.411);
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+/* Checked radio button styling */
+.radio-inputs .radio input:checked+.name {
+    background-color: #3F9295;
+    color: #fafafa;
+    font-weight: bold;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/* Table style */
+table {
+    width: 100%;
+    border-spacing: 0;
+    background-color: transparent;
+    margin: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #3F9295;
+    color: #fafafa;
+    font-weight: bold;
+}
+.table-title{
+    align-self: center;
+    justify-self: center;
+}
+.table-title h2{
+    white-space: nowrap; 
+}
+tbody {
+    display: block;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+tbody::-webkit-scrollbar {
+    width: 0;
+}
+
+tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+tr:nth-child(even) {
+    background-color: #6FC4C7;
+}
+
+td,
+th {
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+td {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Icon table button styles */
+.table-btn {
+    display: inline-block;
+    width: 40px;
+    margin: 5px;
+    border-radius: 6px;
+    border: none;
+    font-size: large;
+    font-weight: bolder;
+}
+
+.table-btn:focus {
+    outline: 0;
+}
+
+.table-btn:active {
+    transform: scale(0.98);
+}
+.table-btn:hover {
+cursor: pointer;
+}
+
+#icon-edit {
+    background-color: #3F9295;
+
+}
+
+#icon-delete {
+    background-color: #e70f0f;
+}

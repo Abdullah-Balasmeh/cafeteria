@@ -1,0 +1,38 @@
+header {
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 60px;
+    width: 100%;
+    box-sizing: border-box; 
+}
+.centerBody{
+    margin-top: 4%;
+}
+.top-right {
+    text-align: right;
+    margin-right: 20px;
+    margin-top: 5%;
+}
+
+@media (max-width: 1366px) {
+    header {
+        margin-top: 3%;
+    }
+}
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-right {
+        font-size: 12px;
+    }
+}
+
+

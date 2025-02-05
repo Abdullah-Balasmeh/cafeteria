@@ -1,0 +1,23 @@
+<div class="nav-box">
+    <h1>شؤون الكفتريات</h1>
+    <!-- Radio Inputs -->
+    <input
+        type="radio"
+        name="slider"
+        id="tabP-1"
+        (change)="selectTab('cafeteria-create')"
+        checked />
+    <input
+        type="radio"
+        name="slider"
+        id="tabH-2"
+        (change)="selectTab('cafeteria-table')" />
+
+        
+    <!-- Navigation Labels -->
+    <nav>
+        <label for="tabP-1" class="tab-1">انشاء كفتيريا</label>
+        <label for="tabH-2" class="tab-2">الكفتريات</label>
+        <div class="slider primaryColor"></div>
+    </nav>
+</div>
